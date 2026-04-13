@@ -1,0 +1,68 @@
+# include<stdio.h>
+int w[10],v[10],f[10][10];
+int max(int a ,int b){
+  if(a>b){
+    return a;
+    
+  }
+  else
+  return b;
+}
+void knapsack(int n,int m){
+  for(int i=0;i<=n;i++){
+    
+    
+    for(int j=0 ;j<=m;j++){
+      
+      if (i==0||j==0)
+      {
+        f[i][j]=0;
+      }
+      else if(w[i]<=j)
+      {
+        f[i][j]=max(f[i-1][j],v[i]+f[i-1][j-w[i]]); //imp
+      }
+      else 
+      {
+        f[i][j]=f[i-1][j];
+      }
+      
+      
+    }
+  }
+}
+void disp(int n, int m){
+  for (int i=0;i<=n;i++){
+    for(int j=0;j<=m;j++){
+      printf("%d\t",f[i][j]);
+    }
+    printf("\n");
+  }
+}
+
+int main(){
+  int i,n,m;
+  printf("enter the total items:\n");
+  
+  scanf("%d",&n);
+  printf("enter total capacity :\n");
+  scanf("%d",&m);
+  
+  
+  printf("enter total weights:\n");
+  for( i=1;i<=n;i++){
+    scanf("%d",&w[i]);
+  }
+  printf("enter total value:\n");
+  for(i=1;i<=n;i++){
+    scanf("%d",&v[i]);
+  }
+  knapsack(n,m);
+  printf("knapsack table:\n");
+  disp(n,m);
+  printf("optimal solution is %d\n",f[n][m]);
+  return 0;
+  }
+  
+  
+  

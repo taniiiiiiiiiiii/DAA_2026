@@ -1,113 +1,110 @@
-# Quick Sort Implementation in C
+# 📘 Design and Analysis of Algorithms (DAA) Lab
 
-## Description
+## 📌 Overview
 
-This project implements the Quick Sort algorithm using the Hoare Partition technique in C. It demonstrates efficient sorting using a divide-and-conquer approach.
+This repository contains implementations of fundamental algorithms studied in the Design and Analysis of Algorithms (DAA) laboratory.
+The programs are written in **C language** and cover various problem-solving techniques such as recursion, divide and conquer, greedy method, and dynamic programming.
 
-## Features
+---
 
-* Implementation using Hoare Partition
-* Efficient sorting (O(n log n) average case)
-* User input supported
-* Simple and clean code
+## 🎯 Objectives
 
-## Technologies Used
+* To understand the design techniques of algorithms
+* To analyze time and space complexity
+* To implement standard algorithms in C
+* To compare efficiency of different approaches
 
-* C Programming Language
-* Standard Library (stdio.h)
+---
 
-## Project Structure
+## 🧠 Algorithms Covered
 
-```
-project-folder/
-│── quicksort.c
-│── README.md
-```
+### 🔹 Searching Algorithms
 
-## How to Run
+* Linear Search
+* Binary Search
 
-### Compile
+### 🔹 Sorting Algorithms
 
-```
-gcc quicksort.c -o quicksort
-```
+* Bubble Sort
+* Selection Sort
+* Insertion Sort
+* Merge Sort
+* Quick Sort
 
-### Run
+### 🔹 Divide and Conquer
 
-```
-./quicksort
-```
+* Merge Sort
+* Quick Sort
+* Binary Search
 
-## Sample Input
+### 🔹 Greedy Algorithms
 
-```
-Enter number of elements:
-5
-Enter elements:
-5 3 8 1 2
-```
+* Fractional Knapsack
+* Job Sequencing with Deadlines
 
-## Sample Output
+### 🔹 Dynamic Programming
 
-```
-Before sorting:
-5 3 8 1 2
+* 0/1 Knapsack
+* Fibonacci (DP approach)
+* Floyd Warshall Algorithm
 
-Sorted array:
-1 2 3 5 8
-```
+### 🔹 Graph Algorithms
 
-## Algorithm
+* Breadth First Search (BFS)
+* Depth First Search (DFS)
+* Dijkstra’s Algorithm
+* Kruskal’s Algorithm
+* Prim’s Algorithm
 
-### Quick Sort (Hoare Partition)
+---
 
-1. Choose the first element as pivot
-2. Initialize two pointers (i and j)
-3. Move i to the right until element >= pivot
-4. Move j to the left until element <= pivot
-5. Swap elements if i < j
-6. Repeat until i >= j
-7. Recursively sort subarrays
+## ⚙️ Technologies Used
 
-## Pseudocode
+* Programming Language: **C**
+* Compiler: GCC / Turbo C
+* Platform: Windows / Linux
 
-```
-QUICKSORT(A, l, r)
-  if l < r
-    s = PARTITION(A, l, r)
-    QUICKSORT(A, l, s)
-    QUICKSORT(A, s+1, r)
-```
+---
 
-## Time Complexity
+## ▶️ How to Run
 
-* Best Case: O(n log n)
-* Average Case: O(n log n)
-* Worst Case: O(n^2)
+1. Open terminal or command prompt
+2. Compile the program:
 
-## Space Complexity
+   ```bash
+   gcc program_name.c
+   ```
+3. Run the executable:
 
-* O(log n)
+   ```bash
+   ./a.out
+   ```
 
-## Advantages
+---
 
-* Faster than simple sorting algorithms
-* In-place sorting
-* Efficient for large datasets
+## 📊 Learning Outcomes
 
-## Limitations
+* Understanding algorithm efficiency
+* Ability to choose optimal solutions
+* Hands-on coding experience
+* Improved problem-solving skills
 
-* Worst case for already sorted data
-* Recursive calls use stack space
+---
 
-## Author
+## 📎 Notes
+
+* Each program is written for academic purposes
+* Inputs are taken from user during execution
+* Outputs are displayed on console
+
+---
+
+## 👩‍💻 Author
 
 Tanisha Suhas Rao
 
-## Contribution
+---
 
-Feel free to fork and improve this project.
+## ⭐ Conclusion
 
-## Support
-
-Give this project a star if you like it.
+This lab helps in building a strong foundation in algorithm design and analysis, which is essential for problem solving and technical interviews.

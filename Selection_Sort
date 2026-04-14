@@ -1,0 +1,45 @@
+#include<stdio.h>
+void read(int a[],int n){
+    for(int i=0;i<n;i++){
+        scanf("%d",&a[i]);
+        
+    }
+}
+void display(int a[],int n){
+    for(int i=0;i<n;i++){
+        printf("%d\t",a[i]);
+    }
+    printf("\n");
+}
+void selection(int a[],int n){
+    int i,min;
+    for(i=0;i<n-1;i++){
+        min=i;
+    
+    for(int j=i+1;j<n;j++){
+        
+        if(a[j]<a[min]){
+            min=j;
+            
+        }}
+            int temp=a[i];
+            a[i]=a[min];
+            a[min]=temp;
+        
+    }
+}
+int main(){
+    int a[10],n;
+    printf("enter the  number of elements\n");
+    scanf("%d",&n);
+    printf("enter the elemnts: \n");
+    read(a,n);
+    printf("elements are :\n");
+    display(a,n);
+    
+    printf("after sort:\n");
+    selection(a,n);
+    display(a,n);
+    return 0;
+    
+}

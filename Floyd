@@ -1,0 +1,40 @@
+#include<stdio.h>
+#define MAX 100
+#define INF 9999
+void floyds(int D[MAX][MAX],int n){
+    int i,j,k;
+    for( k=0;k<n;k++){
+        for(i=0;i<n;i++){
+            for(j=0;j<n;j++)
+            {
+                if(D[i][k]+D[k][j]<D[i][j]){
+                    D[i][j]=D[i][k]+D[k][j];
+                }
+            }
+        }
+    }
+}
+int main(){
+    int i,n,W[MAX][MAX],j;
+    printf("enter the no of vertices:\n");
+    scanf("%d",&n);
+    printf("enter values use %d for infinity\n",INF);
+    for(i=0;i<n;i++){
+        for(j=0;j<n;j++){
+        scanf("%d",&W[i][j]);
+    }
+    }
+    floyds(W,n);
+    printf("shortest path matrix");
+    for(i=0;i<n;i++){
+        for(j=0;j<n;j++){
+            if( W[i][j]==INF){
+                printf("INF");
+            }
+            else
+            printf("%d\t",W[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}

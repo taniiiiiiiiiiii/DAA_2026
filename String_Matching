@@ -1,0 +1,34 @@
+
+#include<stdio.h>
+#include<string.h>
+
+void string_match(char P[],char T[]){
+   int  n=strlen(T);
+   int  m=strlen(P);
+   int i,j, found=0;
+    for(i=0; i<=n-m;i++){
+        for(j=0;j<m;j++){
+            if(T[i+j]!=P[j])
+            break;
+        }
+        if(j==m){
+            printf("Found at position %d\n", i+1);
+            found=1;
+        }
+    }
+    if(!found){
+        printf("not found\n");
+    }
+}
+int main(){
+    int i;
+    char P[20];
+    char T[20];
+    printf("enter the text \n");
+    gets(T);
+    printf("enter pattern\n");
+    gets(P);
+ 
+    string_match(P,T);
+    return 0;
+}

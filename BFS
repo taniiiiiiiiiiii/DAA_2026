@@ -1,0 +1,55 @@
+
+#include <stdio.h>
+#define MAX 10
+void read(int a[MAX][MAX],int n){
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+        scanf("%d",&a[i][j]);}
+    }
+}
+void display(int a[MAX][MAX],int n){
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+        printf("%d\t",a[i][j]);
+           
+        } printf("\n");
+    }
+    printf("\n");
+}
+void bfs(int a[MAX][MAX],int visited[MAX],int start,int n){
+    int queue[MAX];
+    int front=0;
+    int rear=-1;
+    queue[++rear]=start;
+    visited[start]=1;
+    while(front<=rear){
+        int curr=queue[front++];
+        printf("visiting vertex %d\n",curr);
+        for(int i =0;i<n;i++){
+            if(a[curr][i]==1&& visited[i]==0){
+                queue[++rear]=i;
+                visited[i]=1;
+            }
+        }
+        
+        
+    }
+    
+    
+}
+
+int main() {
+ int a[MAX][MAX],visited[MAX] , n,start;
+ printf("enter the no of elements\n");
+ scanf("%d",&n);
+ for(int i=0;i<n;i++)
+ visited[i]=0;
+ printf("enter the elem:\n");
+ read(a,n);
+ printf("eneterd matrix:\n");
+ display(a,n);
+ printf("enter starting vertex:");
+ scanf("%d",&start);
+ bfs(a,visited,start,n);
+    return 0;
+}

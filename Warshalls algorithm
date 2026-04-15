@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX 100
+void warshall(int R[MAX][MAX],int n){
+    int i,j,k;
+    for(k=0;k<n;k++){
+        for(i=0;i<n;i++){
+        for(j=0;j<n;j++){
+        R[i][j]=R[i][j] || (R[i][k] && R[k][j]);
+
+        }
+
+        }
+    }
+
+}
+
+int main()
+
+{int i,j,n;
+int adj[MAX][MAX];
+    printf("enter the number of vertices \n");
+    scanf("%d",&n);
+    printf("enter the adjacency matrix (0 or 1):\n");
+    for(i=0;i<n;i++){
+    for(j=0;j<n;j++){
+    scanf("%d",&adj[i][j]);
+    }
+
+
+    }
+    warshall(adj,n);
+    printf("\n the transitive closure (Transitive closure T) is :\n");
+    for(i=0;i<n;i++){
+
+    for(j=0;j<n;j++){
+    printf("%d",adj[i][j]);
+
+    }
+    printf("\n");
+
+    }
+    return 0;
+}
